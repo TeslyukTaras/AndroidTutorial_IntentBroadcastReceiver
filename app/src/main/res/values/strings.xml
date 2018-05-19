@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">AndroidTutorial_IntentBroadcastReceiver</string>
+    <string name="hint_login">login</string>
+    <string name="hint_password">password</string>
+    <string name="login">login</string>
+    <string name="ivan_franko">Ivan Franko, in full Ivan Yakovych Franko, (born Aug. 27, 1856, Nahuyevychi, Galicia, Austrian Empire [now Ivana-Franka, Ukraine]—died May 28, 1916, Lemberg, Galicia [now Lviv, Ukraine]), Ukrainian author, scholar, journalist, and political activist who gained preeminence among Ukrainian writers at the end of the 19th century. He wrote dramas, lyric poetry, short stories, essays, and children’s verse, but his naturalistic novels chronicling contemporary Galician society and his long narrative poems mark the height of his literary achievement.</string>
+    <string name="send_to">Send to:</string>
+</resources>
