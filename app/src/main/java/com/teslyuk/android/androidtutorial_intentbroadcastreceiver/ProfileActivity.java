@@ -68,7 +68,9 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
 
     private void getNewAvatar() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this)
-                .setTitle("Please select option")
+                .setTitle("Change avatar")
+                .setMessage("Please select option to change avatar.")
+                .setIcon(R.mipmap.ic_launcher_round)
                 .setPositiveButton("Camera", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -124,14 +126,14 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     private void makeCall() {
-        String phone = "+38067123456";
+        String phone = "+380671234567";
         Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phone, null));
         startActivity(intent);
     }
 
     private void startChat() {
         try {
-            String phone = "+38067123456";
+            String phone = "+380671234567";
             String message = "Hello";
 
             Intent sendIntent = new Intent(Intent.ACTION_VIEW);
