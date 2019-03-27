@@ -18,7 +18,7 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/user_profile_iv"
+                android:id="@+id/avatarIv"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
@@ -58,21 +58,21 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/action_call_iv"
+                android:id="@+id/callIv"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_weight="1"
                 android:src="@drawable/ic_call" />
 
             <ImageView
-                android:id="@+id/action_chat_iv"
+                android:id="@+id/chatIv"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_weight="1"
                 android:src="@drawable/ic_chat" />
 
             <ImageView
-                android:id="@+id/action_share_iv"
+                android:id="@+id/shareIv"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_weight="1"

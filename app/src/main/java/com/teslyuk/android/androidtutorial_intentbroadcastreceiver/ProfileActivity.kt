@@ -8,9 +8,8 @@ import android.provider.MediaStore
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.view.View
-import android.widget.ImageView
 import android.util.Log
-import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_profile.*
 
 import java.io.File
 
@@ -26,23 +25,10 @@ class ProfileActivity : AppCompatActivity(), View.OnClickListener {
         private val TAG = ProfileActivity::class.java.simpleName
     }
 
-    private lateinit var avatarIv: ImageView
-    private lateinit var callIv: ImageView
-    private lateinit var chatIv: ImageView
-    private lateinit var shareIv: ImageView
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
-        initView()
         initListener()
-    }
-
-    private fun initView() {
-        avatarIv = findViewById(R.id.user_profile_iv)
-        callIv = findViewById(R.id.action_call_iv)
-        chatIv = findViewById(R.id.action_chat_iv)
-        shareIv = findViewById(R.id.action_share_iv)
     }
 
     private fun initListener() {
@@ -54,10 +40,10 @@ class ProfileActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(view: View) {
         when (view.id) {
-            R.id.user_profile_iv -> getNewAvatar()
-            R.id.action_call_iv -> makeCall()
-            R.id.action_chat_iv -> startChat()
-            R.id.action_share_iv -> shareContact()
+            R.id.avatarIv -> getNewAvatar()
+            R.id.callIv -> makeCall()
+            R.id.chatIv -> startChat()
+            R.id.shareIv -> shareContact()
         }
     }
 
@@ -116,19 +102,13 @@ class ProfileActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun startChat() {
-        try {
-            val phone = "+380671234567"
-            val message = "Hello"
+        val phone = "+380671234567"
+        val message = "Hello"
 
-            val sendIntent = Intent(Intent.ACTION_VIEW)
-            sendIntent.putExtra("address", phone)
-            sendIntent.putExtra("sms_body", message)
-            sendIntent.type = "vnd.android-dir/mms-sms"
-            startActivity(sendIntent)
-        } catch (e: Exception) {
-            Toast.makeText(this@ProfileActivity, "SMS Failed to Send, Please try again", Toast.LENGTH_SHORT).show()
-        }
-
+        val uri = Uri.parse("smsto:$phone")
+        val intent = Intent(Intent.ACTION_SENDTO, uri)
+        intent.putExtra("sms_body", message)
+        startActivity(intent)
     }
 
     private fun shareContact() {
